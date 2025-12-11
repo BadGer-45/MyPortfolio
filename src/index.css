@@ -1,0 +1,396 @@
+body, html {
+  background-color: hsla(0, 0%, 0%, 0.75);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+ul li{
+  margin-bottom: 10px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.videoBG {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -10;
+}
+
+.videoBG video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(25px) brightness(50%);
+}
+
+.introduction{
+  background: hsla(0, 0%, 100%, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: hsl(0, 0%, 100%);
+  padding: 10px 22px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.5);
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  max-width: 1000px;
+  display: inline-block;
+}
+
+.introduction .chibiGoku{
+  width: 25%;
+  height: auto;
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.50);
+  border: 2px solid white;
+}
+
+
+.introduction .title{
+  color: white;
+  text-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.50);
+}
+
+.introduction .desc{
+  color: white;
+  text-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.50);
+}
+
+button {
+  background: hsla(0, 0%, 100%, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: hsl(0, 0%, 100%);
+  padding: 10px 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+
+.overlay {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  color: white;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(25px);
+}
+
+.modalContent {
+  background: hsla(0, 0%, 100%, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 25px;
+  width: 350px;
+  border-radius: 10px;
+  position: relative;
+  animation: fadeIn 0.30s ease;
+}
+
+.modalContent.fade-out {
+  animation: fadeOut 0.30s ease forwards;
+}
+
+.modalClose {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: hsla(0, 0%, 100%, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.skill {
+  margin: 25px auto;
+  width: 60%;
+  align-items: center;
+  font-size: 18px;
+}
+
+.skillsTitle{
+  font-size: 26px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.bar {
+  height: 10px;
+  background: #444;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.bar div {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #007fbe, #29b8ff, #007fbe);
+  border-radius: 10px;
+  background-size: 200% 100%;
+  animation: slideGradient 5s  infinite;
+}
+
+
+.skill-label {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
+  margin-bottom: 5px;
+  animation: fadeIn 0.4s ease;
+}
+
+.skill-icon {
+  width: 25px;
+  height: auto;
+}
+
+
+.experienceContainer {
+  color: white;
+  padding: 10px;
+}
+
+.experienceCard{
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  margin: 0 auto;
+  animation: fadeIn 0.4s ease;
+}
+
+.experienceTitle {
+  font-size: 26px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+.timeline {
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.timeline li {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 4px;
+  height: 100%;
+  background: #ffffff55;
+}
+
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background: #cfcfcf;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.timelineContent {
+  padding-left: 30px;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.timelineDate {
+  font-size: 14px;
+  color: #bbbbbb;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.projectsContainer {
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
+
+.projectsTitle {
+  font-size: 26px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.projectCard {
+  border-radius: 12px;
+  padding: 15px;
+  backdrop-filter: blur(6px);
+  text-align: left;
+  transition: 0.3s ease;
+  animation: fadeIn 0.4s ease;
+}
+
+.projectCard h3 {
+  margin: 0;
+}
+
+.projectDesc {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.projectTech {
+  margin: 10px 0;
+  font-size: 13px;
+  color: #cccccc;
+}
+
+.contactWrapper {
+  color: white;
+  text-align: center;
+}
+
+.contact-icon {
+  width: 25px;
+  height: auto;
+}
+
+.contactTitle {
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contactCard {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  width: 300px;
+  margin: 0 auto;
+  animation: fadeIn 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.contactLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.contactLink:hover {
+  color: white;
+  text-shadow: 0 0 6px #ffffff;
+}
+
+
+
+
+@keyframes slideGradient {
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
